@@ -1,12 +1,2 @@
 <h1>{{title}}</h1>
-
-Age: {{age}}
-
-@if(age>=18){
-  <div>He is not teenager</div>
-}
-@else{
-  <div>He is teenager</div>
-}
-
-<div *ngIf="age==15">c'est 15</div>
+<app-company-details [company]="myCompany"></app-company-details>

@@ -1,0 +1,13 @@
+
+@if(company){
+<dl>
+  <dt>Nom</dt>
+  <dd>{{company.nom}}</dd>
+  <dt>Address</dt>
+  <dd>{{company.address}}</dd>
+  <dt>Date création</dt>
+  <dd>{{company.dateCreation|date: 'yyyy-MM-dd HH:mm'}}</dd>
+  <dt>Capital</dt>
+  <dd>{{company.capitalSocial|number}}</dd>
+</dl>
+}
