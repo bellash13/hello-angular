@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Company } from '../company.model';
 import { CommonModule, DatePipe } from '@angular/common';
+import { CompanyEditComponent } from '../company-edit/company-edit.component';
 
 @Component({
   selector: 'app-company-details',

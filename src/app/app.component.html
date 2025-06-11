@@ -1,2 +1,4 @@
 <h1>{{title}}</h1>
+<strong>App company:</strong> {{myCompany.nom}}
 <app-company-details [company]="myCompany"></app-company-details>
+<app-company-edit  [company]="myCompany" (onEditSuccess)="companyIsEdited($event)"></app-company-edit>

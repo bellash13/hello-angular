@@ -1,18 +1,26 @@
 import { CommonModule, DatePipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Company } from './company.model';
-import { CompanyDetailsComponent } from "./company-details/company-details.component";
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { CompanyEditComponent } from './company-edit/company-edit.component';
 
 @Component({
   selector: 'app-root',
-  imports: [NgIf, DatePipe, CommonModule, CompanyDetailsComponent],
+  imports: [CommonModule, CompanyDetailsComponent, CompanyEditComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string = 'Hi Angular';
   age = 15;
-  myCompany: Company = {nom: "CNSSAP",dateCreation: new Date()};
-}
+  myCompany!: Company;
 
+  ngOnInit() {
+    this.myCompany = { nom: 'CNSSAP', dateCreation: new Date() };
+  }
+
+  companyIsEdited(company: Company) {
+    this.myCompany = company;
+  }
+}
